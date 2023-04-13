@@ -1,5 +1,18 @@
 [workspace]
-
 members = [
     "platelet",
 ]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2021"
+authors = ["Roger Zurawicki <roger@zura.wiki>"]
+description = "A self-healing Rust dev environment"
+rust-version = "1.68.0"
+keywords = ["openai", "ai", "gpt"]
+readme = "./README.md"
+homepage = "https://github.com/zurawiki/platelet"
+repository = "https://github.com/zurawiki/platelet"
+license = "MIT"
+[profile.release]
+incremental = true
