@@ -1,6 +1,8 @@
 [workspace]
 members = [
     "platelet",
+    # Examples
+    "examples/cli_hello_world",
 ]
 
 [workspace.package]
