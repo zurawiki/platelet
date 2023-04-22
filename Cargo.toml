@@ -4,7 +4,7 @@ members = [
     # Examples
     "examples/cli_hello_world",
 ]
-
+exclude=["examples/cli_hello_world"]
 [workspace.package]
 version = "0.0.1"
 edition = "2021"

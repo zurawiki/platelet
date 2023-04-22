@@ -6,7 +6,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "37 6 * * 1-5" # run once per day Monday-Friday at 7:37am
+    # - cron: "37 6 * * 1-5" # run once per day Monday-Friday at 7:37am
 
 env:
   RUST_BACKTRACE: 1
@@ -119,7 +119,7 @@ jobs:
       - id: check
         run: |
           set +e
-          ./scripts/is_version_already_uploaded.sh tiktoken-rs
+          ./scripts/is_version_already_uploaded.sh platelet
           export EXIT_CODE="$?"
           set -e
           if [[ "$EXIT_CODE" == "7" ]]; then
@@ -134,5 +134,5 @@ jobs:
       - name: Determine the tag name
         id: tag
         run: |
-          export TAG_NAME="v$(./scripts/get_current_version.sh tiktoken-rs)"
+          export TAG_NAME="v$(./scripts/get_current_version.sh platelet)"
           echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
